@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MaroonAlpha</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles/general.css">
+    <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body ng-app="maroonApp" style="overflow: hidden">
+    <!--activate view-->
+    <ui-view></ui-view>
+    <!--bower-->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <!--app-->
+    <script src="app.js"></script>
+    <!--components-->
+    <script src="components/addIndicatorComponent.js"></script>
+    <script src="components/brushComponent.js"></script>
+    <script src="components/chartComponent.js"></script>
+    <script src="components/chartSettingsComponent.js"></script>
+    <script src="components/contextComponent.js"></script>
+    <script src="components/focusComponent.js"></script>
+    <script src="components/indicatorComponent.js"></script>
+    <script src="components/inspectorComponent.js"></script>
+    <script src="components/legendComponent.js"></script>
+    <script src="components/metricComponent.js"></script>
+    <script src="components/visorMetricComponent.js"></script>
+    <script src="components/navIndicatorComponent.js"></script>
+    <script src="components/navOptionsComponent.js"></script>
+    <script src="components/portfolioComponent.js"></script>
+    <script src="components/operatorComponent.js"></script>
+    <script src="components/directorComponent.js"></script>
+    <script src="components/optionComponent.js"></script>
+    <script src="components/scalerComponent.js"></script>
+    <script src="components/slabComponent.js"></script>
+    <script src="components/stockVisorComponent.js"></script>
+    <script src="components/toolsComponent.js"></script>
+    <script src="components/visorComponent.js"></script>
+    <script src="components/visorSeriesComponent.js"></script>
+    <!--controllers-->
+    <script src="controllers/BottomNavController.js"></script>
+    <script src="controllers/BottomPageController.js"></script>
+    <script src="controllers/ContextController.js"></script>
+    <script src="controllers/MarketController.js"></script>
+    <script src="controllers/MetricController.js"></script>
+    <script src="controllers/VisorMetricController.js"></script>
+    <script src="controllers/NavbarController.js"></script>
+    <script src="controllers/NavIndicatorController.js"></script>
+    <script src="controllers/NavOptionsController.js"></script>
+    <script src="controllers/PortfolioController.js"></script>
+    <script src="controllers/OperatorController.js"></script>
+    <script src="controllers/OptionController.js"></script>
+    <script src="controllers/VisorSeriesController.js"></script>
+    <script src="controllers/StockToastController.js"></script>
+    <script src="controllers/StockVisorController.js"></script>
+    <script src="controllers/ToolsController.js"></script>
+    <script src="controllers/VisorController.js"></script>
+    <!--directives-->
+    <script src="directives/chartDirective.js"></script>
+    <script src="directives/contextDirective.js"></script>
+    <!--factories-->
+    <script src="factories/analystBrushFactory.js"></script>
+    <script src="factories/aroonGuideFactory.js"></script>
+    <script src="factories/archiveFactory.js"></script>
+    <script src="factories/bandIndicatorFactory.js"></script>
+    <script src="factories/brushFactory.js"></script>
+    <script src="factories/chartFactory.js"></script>
+    <script src="factories/colorFactory.js"></script>
+    <script src="factories/composerFactory.js"></script>
+    <script src="factories/contextBrushFactory.js"></script>
+    <script src="factories/d3Factory.js"></script>
+    <script src="factories/directorFactory.js"></script>
+    <script src="factories/focusFactory.js"></script>
+    <script src="factories/graphFactory.js"></script>
+    <script src="factories/indicatorFactory.js"></script>
+    <script src="factories/inspectorFactory.js"></script>
+    <script src="factories/legendFactory.js"></script>
+    <script src="factories/managerFactory.js"></script>
+    <script src="factories/metricFactory.js"></script>
+    <script src="factories/operatorFactory.js"></script>
+    <script src="factories/optionFactory.js"></script>
+    <script src="factories/primaryIndicatorFactory.js"></script>
+    <script src="factories/rsiGuideFactory.js"></script>
+    <script src="factories/seriesFactory.js"></script>
+    <script src="factories/trackerFactory.js"></script>
+    <!--services-->
+    <script src="services/aroonCalcService.js"></script>
+    <script src="services/aroonDataService.js"></script>
+    <script src="services/bandCalcService.js"></script>
+    <script src="services/bandDataService.js"></script>
+    <script src="services/brushService.js"></script>
+    <script src="services/chainService.js"></script>
+    <script src="services/classifierService.js"></script>
+    <script src="services/contextService.js"></script>
+    <script src="services/d3Service.js"></script>
+    <script src="services/focusService.js"></script>
+    <script src="services/guideService.js"></script>
+    <script src="services/indexService.js"></script>
+    <script src="services/indicatorService.js"></script>
+    <script src="services/manifestService.js"></script>
+    <script src="services/marketService.js"></script>
+    <script src="services/outlineService.js"></script>
+    <script src="services/portfolioService.js"></script>
+    <script src="services/primaryDataService.js"></script>
+    <script src="services/rsiCalcService.js"></script>
+    <script src="services/rsiDataService.js"></script>
+    <script src="services/secondaryDataService.js"></script>
+    <script src="services/stockService.js"></script>
+    <script src="services/yqlService.js"></script>
+    <!--version-->
+    <script src="components/version/version.js"></script>
+    <script src="components/version/version-directive.js"></script>
+    <script src="components/version/interpolate-filter.js"></script>
+</body>
+</html>

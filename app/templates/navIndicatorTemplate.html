@@ -1,0 +1,17 @@
+<md-menu>
+    <md-button flex
+               ng-click="$ctrl.openIndicators($mdOpenMenu, $event)"
+               style="font-size: .4em; margin: 0; padding: 0;">
+        <div layout="row"layout-align="center center">
+            <span style="margin: 4px;">GRAPH</span>
+            <md-icon flex class="material-icons" style="font-size:3em;">trending_up</md-icon>
+        </div>
+    </md-button>
+    <md-menu-content>
+        <md-menu-item ng-repeat="indicator in $ctrl.info.indicatorTypes">
+            <md-button ng-click="$ctrl.addIndicator(indicator, $event)">
+                {{indicator.title}}
+            </md-button>
+        </md-menu-item>
+    </md-menu-content>
+</md-menu>

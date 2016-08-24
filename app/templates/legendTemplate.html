@@ -1,0 +1,31 @@
+<div layout="row" layout-align="start" style="margin: 0; padding: 0; min-height: 0; height: 0; min-width: 0; width: 0">
+    <div layout="row">
+        <div layout="column">
+            <div style="min-height: 4vh;"></div>
+            <div ng-repeat="stock in $ctrl.info.stocks" style="font-size: .5em;">
+                {{stock}}
+            </div>
+        </div>
+        <div layout="column" layout-align="start center" ng-repeat="visor in $ctrl.info.visors"
+        ng-show="visor.getSelected()">
+            <div style="min-height: 2vh; height: 2vh; max-height: 2vh; padding: 0; margin: 0;">
+                <visor-component visor="visor"></visor-component>
+            </div>
+            <div layout="row">
+                <div ng-repeat="metric in visor.getMetrics()"
+                     ng-show="metric.getSelected()"
+                     style="margin: 0;
+                     padding: 0; min-height:1vh; height: 1vh; max-height: 1vh;">
+                    <visor-metric-component metric="metric"></visor-metric-component>
+                    <div layout="column">
+                        <div ng-repeat="series in metric.getSeriesList()">
+                            {{series.getName()}}
+                            <visor-series-component series="series"></visor-series-component>
+                        </div>
+                    </div>
+                </div>
+                <md-divider flex></md-divider>
+            </div>
+        </div>
+    </div>
+</div>

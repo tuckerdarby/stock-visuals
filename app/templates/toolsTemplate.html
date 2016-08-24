@@ -1,0 +1,21 @@
+<md-menu md-theme="operator">
+    <md-button flex ng-click="$ctrl.openToolsMenu($mdOpenMenu, $event)"
+               style="font-size: .4em; margin: 0; padding: 0;">
+        <div flex layout="row"layout-align="center center">
+            <div flex style="margin: 2px;">Analyze</div>
+            <md-icon flex class="material-icons" style="font-size: 3em">
+                blur_linear
+            </md-icon>
+        </div>
+    </md-button>
+    <md-menu-content>
+            <md-radio-group ng-model="$ctrl.info.toolGroup">
+                <md-radio-button ng-repeat="tool in $ctrl.info.toolTypes"
+                                 ng-value="tool.value"
+                                 ng-click="$ctrl.setHighlightTool(tool.value)"
+                                 class="md-primary">
+                    {{tool.title}}
+                </md-radio-button>
+            </md-radio-group>
+    </md-menu-content>
+</md-menu>

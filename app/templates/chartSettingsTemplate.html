@@ -1,0 +1,48 @@
+<md-menu>
+    <md-button ng-click="$ctrl.openSettings($mdOpenMenu, $event)"
+               aria-label="Operator Options"
+               style="min-width: 3vh; width: 3vh;
+                               min-height: 4vh; height: 4vh;
+                               margin: 0; padding: 0">
+        <md-icon class="material-icons"
+                 style="font-size:1.5em;
+                                 margin: 0; margin-left: -4px;
+                                  padding: 0; line-height: 0;">
+            more_vert
+        </md-icon>
+    </md-button>
+    <md-menu-content>
+        <md-menu-item flex>
+            <md-checkbox layout-padding flex class="md-primary md-raised"
+                         ng-model="$ctrl.slab.info.showingLegend">
+                <label>Legend</label>
+            </md-checkbox>
+        </md-menu-item>
+        <md-divider></md-divider>
+        <md-menu-item flex>
+            <md-checkbox flex class="md-primary md-raised"
+                         ng-model="$ctrl.info.inspecting"
+                         ng-click="$ctrl.toggleInspect()">
+                <label>Inspecting</label>
+            </md-checkbox>
+        </md-menu-item>
+        <md-divider></md-divider>
+        <md-menu-item flex>
+            <md-checkbox flex class="md-primary md-raised"
+                         ng-model="$ctrl.info.brushing"
+                         ng-click="$ctrl.toggleBrush()">
+                <label>Brushing</label>
+            </md-checkbox>
+        </md-menu-item>
+        <md-divider></md-divider>
+        <md-menu-item>
+            <md-button ng-click="$ctrl.removeFocus()">
+                <md-icon class="material-icons"
+                         style="margin: 0; padding: 0; font-size: 1.4em">
+                    delete
+                </md-icon>
+                         <span>Remove</span>
+            </md-button>
+        </md-menu-item>
+    </md-menu-content>
+</md-menu>

@@ -1,0 +1,9 @@
+<md-toast>
+    <md-progress-circular class="md-accent" mode="indeterminate"></md-progress-circular>
+    <span class="md-toast-test" flex layout="row">
+        Fetching stocks:
+        <div ng-repeat="stock in vm.info.loading" layout="row">
+            &nbsp;{{stock}}
+        </div>
+    </span>
+</md-toast>

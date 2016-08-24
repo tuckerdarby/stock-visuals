@@ -1,0 +1,15 @@
+<div layout="column" layout-fill ng-cloak
+     style="min-height: 100vh; min-width: 100vw; overflow: hidden; padding: 0; margin: 0;">
+    <md-toolbar class="md-whiteframe-8dp" flex="5" layout="row" ui-view="navbar"></md-toolbar>
+    <md-content flex="95" style="height: 95vh;">
+        <div flex class="container" layout="row" layout-align="start start" ng-cloak>
+            <md-content flex id="content" ui-view="market"></md-content>
+        </div>
+        <div flex style="overflow: hidden; bottom: 0; right: 0; position: fixed; z-index: 5;"
+             ui-view="navbottom">
+        </div>
+    </md-content>
+</div>
+
+
+

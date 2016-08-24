@@ -1,0 +1,54 @@
+<md-menu flex>
+    <md-button flex ng-click="$ctrl.openPortfolio($mdOpenMenu, $event)"
+               style="font-size: .4em; margin: 0; padding: 0;">
+        <div flex layout="row"layout-align="center center">
+            <div flex style="margin: 4px;">PORTFOLIO</div>
+            <md-icon flex class="material-icons md-18"
+            style="font-size: 3em;">
+                bookmark_border
+            </md-icon>
+        </div>
+    </md-button>
+    <md-menu-content layout="column" md-position-mode="target-left target"
+                     flex class="md-whiteframe-12dp"
+                     md-theme="operator">
+        <md-menu-item>
+            <md-input-container>
+                <form layout="row">
+                    <div flex="75">
+                        <label style="font-size: .6em">watch a stock</label>
+                        <div class="form-group" layout="row">
+                            <input ng-model="$ctrl.info.selected">
+                        </div>
+                    </div>
+                    <button md-theme="operator"
+                            flex="25" type="submit"
+                            class="md-button md-hue-3 md-raised md-primary"
+                            ng-click="$ctrl.addStock($event)">
+                        ADD
+                    </button>
+                </form>
+            </md-input-container>
+        </md-menu-item>
+        <md-divider></md-divider>
+        <md-menu-item ng-repeat="stock in $ctrl.info.stocks">
+            <md-menu-item flex>
+                <md-checkbox class="md-primary"
+                             style="padding: 2vh;"
+                             ng-model="stock.selected"
+                             ng-click="$ctrl.toggleStock(stock)">
+                    {{stock.ticker}}
+                </md-checkbox>
+            </md-menu-item>
+        </md-menu-item>
+        <md-divider></md-divider>
+        <md-menu-item>
+            <div layout="row" layout-align="end center">
+            <md-button flex="20" class="md-raised md-warn" ng-click="$ctrl.clearPortfolio()"
+                style="padding: 1vh; min-height: 5vh; height: 5vh; min-width: 10vh; line-height: 0;">
+                clear
+            </md-button>
+            </div>
+        </md-menu-item>
+    </md-menu-content>
+</md-menu>

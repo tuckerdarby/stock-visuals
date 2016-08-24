@@ -1,0 +1,22 @@
+<md-menu>
+    <md-button aria-label="Operator Options"
+               ng-click="$ctrl.openMenu($mdOpenMenu, $event)"
+               style="min-width: 4vh; width: 4vh;
+                               min-height: 4vh; height: 4vh;
+                               margin: 0; padding: 0">
+        <md-icon flex
+                 class="material-icons"
+                 style="font-size:1.4em;
+                                 margin: 0; margin-left: -4px;
+                                  padding: 0;">
+            add
+        </md-icon>
+    </md-button>
+    <md-menu-content>
+        <md-menu-item ng-repeat="brand in $ctrl.info.indicators">
+            <md-button ng-click="$ctrl.addIndicator(brand)">
+                {{brand}}
+            </md-button>
+        </md-menu-item>
+    </md-menu-content>
+</md-menu>

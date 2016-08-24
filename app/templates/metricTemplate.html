@@ -1,0 +1,40 @@
+<div flex layout="row">
+    <div flex="10"></div>
+    <md-divider></md-divider>
+    <md-checkbox class="md-raised md-primary" layout="column" layout-align="center center" flex ng-model="$ctrl.info.selected" ng-change="$ctrl.toggleMetric()">
+        <label ng-model="$ctrl.info.name"><span ng-bind="$ctrl.info.name"></span></label>
+    </md-checkbox>
+    <md-divider></md-divider>
+</div>
+<div layout="row">
+    <md-menu style="margin: 0; padding: 0; line-height: 0">
+        <md-button class="md-raised md-primary"
+                   ng-click="$ctrl.openMenu($mdOpenMenu)"
+                   layout="column" layout-align="start start"
+                   style="min-height: 3vh; min-width: 3vh; line-height: 0; padding: 0; margin: 0">
+                <md-icon  style="margin: 0; padding: 0; font-size: 1.5em;" ng-style="{color: $ctrl.info.color}">invert_colors</md-icon>
+        </md-button>
+        <md-menu-content>
+            <md-menu-item ng-repeat="colored in $ctrl.info.colors">
+                <md-button ng-click="$ctrl.setTheme(colored)" ng-style="{'background-color': colored}">
+
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+    <md-menu style="margin: 0; padding: 0; line-height: 0">
+        <md-button class="md-raised md-primary"
+                   ng-click="$ctrl.openMenu($mdOpenMenu)"
+                   layout="column" layout-align="start start"
+                   style="min-height: 3vh; min-width: 3vh; line-height: 0; padding: 0; margin: 0">
+            <md-icon style="margin: 0; padding: 0;" ng-repeat="liner in $ctrl.info.linings" ng-bind="liner.icon" ng-model="$ctrl.info.liningIcon" ng-show="liner.icon == $ctrl.info.liningIcon"></md-icon>
+        </md-button>
+        <md-menu-content>
+            <md-menu-item ng-repeat="lining in $ctrl.info.linings">
+                <md-button ng-click="$ctrl.setLining(lining)">
+                    <md-icon>{{lining.icon}}</md-icon><span>{{lining.title}}</span>
+                </md-button>
+            </md-menu-item>
+        </md-menu-content>
+    </md-menu>
+</div>

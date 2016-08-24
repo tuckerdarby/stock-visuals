@@ -1,0 +1,91 @@
+<div layout="row" layout-align="center" ng-if="$ctrl.option.use == 'creator'">
+    <md-button flex="80" ng-click="$ctrl.operator.addOption($ctrl.option)"
+            class="md-raised md-primary"
+            style="min-height: 3vh; max-height: 3vh; line-height: 0; font-size: 0.6em;">
+        +{{$ctrl.option.title}}
+    </md-button>
+</div>
+<div flex ng-if="$ctrl.option.use =='stock'" style="overflow: hidden">
+        <div layout="row" style="margin: 1vh 2vh; margin-bottom: 0;"
+             flex layout-align="left">
+            <div flex style="font-size: .8em;">
+                <md-checkbox class="md-primary" flex
+                             ng-model="$ctrl.option.showing"
+                             ng-click="$ctrl.operator.toggleStock($ctrl.option)">
+                    {{$ctrl.option.ticker}}
+                </md-checkbox>
+            </div>
+        </div>
+</div>
+<div ng-if="$ctrl.option.use =='option'" style="overflow: hidden">
+    <div flex layout="row">
+        <div layout="row" style="margin: 1vh 2vh; margin-bottom: 0;"
+             flex layout-align="left">
+            <div flex style="font-size: .4em;">
+                <md-checkbox class="md-primary"
+                             ng-model="$ctrl.option.showing"
+                            ng-click="$ctrl.operator.toggleOption($ctrl.option)"></md-checkbox>
+            </div>
+        </div>
+        <div flex="5"></div>
+        <div layout="column" flex style="padding: 0; margin: 0">
+            <md-input-container style="padding:0; margin:0">
+                <label style="font-size: .4em;">Metrics</label>
+                <md-select ng-model="$ctrl.option.selections.metrics.selected" multiple
+                        style="font-size: 0.7em; padding: 0; margin: 0;">
+                    <md-optgroup label="Metrics">
+                        <md-option ng-value="metric.title"
+                                   ng-repeat="metric in $ctrl.option.indicators"
+                                   ng-click="$ctrl.operator.toggleMetric($ctrl.option, metric)">
+                            {{metric.title}}
+                        </md-option>
+                    </md-optgroup>
+                </md-select>
+            </md-input-container>
+        </div>
+        <div flex="5"></div>
+        <div ng-if="$ctrl.option.indicators.length > 1" layout="column" flex style="padding: 0; margin: 0">
+            <md-input-container flex style="padding:0; margin:0; min-width: 2vh; width: 2vh; max-width: 2vh">
+                <label style="font-size: .4em;">Indicators</label>
+                <md-select ng-model="$ctrl.option.selections.indicators.selected" single
+                           style="font-size: 0.7em; padding: 0; margin: 0;">
+                    <md-optgroup label="Indicators">
+                        <md-option ng-value="indicator.title"
+                                   ng-repeat="indicator in $ctrl.option.indicators"
+                                   ng-click="$ctrl.operator.setIndicator($ctrl.option, indicator)">
+                            {{indicator.title}}
+                        </md-option>
+                    </md-optgroup>
+                </md-select>
+            </md-input-container>
+        </div>
+        <div flex="15">
+            <md-button class="md-raised md-warn"
+                       style="line-height: 0; min-width: 4vh; max-width: 4vh;
+                            min-height: 4vh; max-height: 4vh; padding:0; margin: 0"
+                       flex="5">
+                <md-icon flex class="material-icons"
+                         style="font-size:1em; padding: 1px; margin: 1px; margin-left: -3px;">
+                    delete
+                </md-icon>
+            </md-button>
+        </div>
+    </div>
+    <div ng-repeat="param in $ctrl.option.parameters" >
+        <div layout="row" layout-align="center" style="min-height: 4vh;">
+            <div flex="35" style="font-size:0.6em; margin-top: 0vh">
+                {{param.val}}
+            </div>
+            <div flex="5"></div>
+            <md-slider-container flex="50" style="overflow: hidden; margin-top: -2vh;">
+                <md-slider style="max-height:1vh; min-height:1vh; height: 1vh;" flex
+                           ng-model="param.val"
+                           min="{{param.minVal}}"
+                           max="{{param.maxVal}}"
+                           ng-change="$ctrl.operator.updateOption($ctrl.option)">
+                </md-slider>
+            </md-slider-container>
+            <div flex="10"></div>
+        </div>
+    </div>
+</div>

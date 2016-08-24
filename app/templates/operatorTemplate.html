@@ -1,0 +1,82 @@
+<div layout="column" flex
+     style="padding: 0px; text-align: center; margin: 0; overflow: hidden">
+    <md-toolbar class="md-whiteframe-2dp"
+                layout="row" layout-align="start center"
+                style="line-height: 0; font-size: 0.7em;
+                min-height: 3vh; height: 3vh; max-height: 3vh; margin: 0;">
+        <md-checkbox ng-click="$ctrl.toggleIndicator()"
+                     ng-model="$ctrl.info.selected"
+                     class="md-raised"
+                     style="min-width: 3vh; width: 3vh;
+                            min-height: 3vh; height: 3vh; margin: 0; padding: 0">
+        </md-checkbox>
+        <md-divider></md-divider>
+        <div flex layout="row" layout-align="start center">
+            <div flex="10"></div>
+            {{$ctrl.info.title}}
+            <div flex layout="column">
+                <md-divider flex></md-divider>
+                <md-divider flex></md-divider>
+                <md-divider flex></md-divider>
+            </div>
+        </div>
+        <div layout="row">
+            <md-button
+                    ng-click="$ctrl.toggleMetrics()"
+                    aria-label="Operator Options"
+                       style="min-width: 3vh; width: 3vh;
+                              min-height: 3vh; height: 3vh; margin: 0; padding: 0">
+                <md-icon flex
+                         class="material-icons"
+                         style="font-size:1.2em; margin: 0; padding: 0;">
+                    multiline_chart
+                </md-icon>
+            </md-button>
+            <md-button ng-click="$ctrl.toggleParameters()"
+                       ng-if="$ctrl.info.parameters.length > 0"
+                    aria-label="Operator Options"
+                       style="min-width: 3vh; width: 3vh;
+                              min-height: 3vh; height: 3vh; margin: 0; padding: 0">
+                <md-icon flex
+                         class="material-icons"
+                         style="font-size:1.2em; margin: 0; padding: 0;">
+                    swap_horiz
+                </md-icon>
+            </md-button>
+            <md-button ng-click="$ctrl.toggleParents()"
+                       ng-if="$ctrl.info.factors.length > 0"
+                    aria-label="Operator Options"
+                       style="min-width: 3vh; width: 3vh;
+                              min-height: 3vh; height: 3vh; margin: 0; padding: 0">
+                <md-icon flex
+                         class="material-icons"
+                         style="font-size:1.2em; margin: 0; padding: 0;">
+                    link
+                </md-icon>
+            </md-button>
+        </div>
+        <div flex="5"></div>
+        <md-divider></md-divider>
+        <md-button ng-click="$ctrl.removeIndicator()"
+                    aria-label="Operator Options"
+                   style="min-width: 3vh; width: 3vh;
+                          min-height: 3vh; height: 3vh; margin: 0; padding: 0">
+            <md-icon flex
+                     class="material-icons"
+                     style="font-size:1.2em; margin: 0; padding: 0;">
+                clear
+            </md-icon>
+        </md-button>
+    </md-toolbar>
+    <md-content>
+            <div ng-hide="!$ctrl.showing.metrics">
+                <div ng-transclude="categories"></div>
+            </div>
+            <div ng-show="$ctrl.showing.parameters">
+                <div ng-transclude="scales"></div>
+            </div>
+            <div ng-show="$ctrl.showing.parents">
+                <div ng-transclude="determiner"></div>
+            </div>
+    </md-content>
+</div>

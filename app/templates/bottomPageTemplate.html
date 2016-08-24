@@ -1,0 +1,19 @@
+<md-bottom-sheet flex
+                 style="padding: 0; margin: 0; margin-bottom: 10vh;
+                 min-height: 30vh; height: 30vh; max-height: 30vh;
+                 overflow: hidden;
+                 line-height: 0;
+                 position: absolute">
+    <div flex style="min-height: 30vh; height: 30vh; max-height: 30vh; overflow: hidden">
+        <md-content flex style="overflow: hidden; padding: 0; margin: 0;">
+            <div flex layout="column" flex="100" style="min-height: 30vh; height: 30vh; max-height: 30vh">
+                <focus-component flex focus="{brand: 'context'}"
+                                 style="min-height: 30vh; height: 30vh; max-height: 30vh">
+                    <chart-component flex style="min-height: 30vh; height: 30vh; max-height: 30vh">
+                        <brush-component brand="'context'"></brush-component>
+                    </chart-component>
+                </focus-component>
+            </div>
+        </md-content>
+    </div>
+</md-bottom-sheet>

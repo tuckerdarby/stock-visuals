@@ -1,0 +1,57 @@
+<div md-theme="director" layout="column" flex style="padding: 0; margin: 0; width: 100%; min-height: 100%; height: 100%;">
+    <!--<div layout-padding
+         style="font-size: .55em; min-height:2vh; height: 2vh; max-height:2vh;">
+    </div>-->
+    <md-toolbar flex
+                class="md-whiteframe-2dp"
+                layout="row" layout-align="center center"
+                style="line-height: 0; font-size: 0.9em; min-height: 4vh;
+                height: 4vh; max-height: 4vh; margin: 0; margin-bottom: 2px;">
+        <div flex layout="row" layout-align="center center">
+            <span>{{$ctrl.info.title}}</span>
+        </div>
+        <div style="min-width: 4vh; width: 4vh; min-height: 4vh; height: 4vh; margin: 0; padding: 0">
+            <add-indicator-component></add-indicator-component>
+        </div>
+        <md-button aria-label="Operator Options"
+                   style="min-width: 4vh; width: 4vh;
+                               min-height: 4vh; height: 4vh;
+                               margin: 0; padding: 0">
+            <md-icon flex
+                    class="material-icons"
+                     style="font-size: 1.4em;
+                                 margin: 0; margin-left: -4px;
+                                  padding: 0;">
+                menu
+            </md-icon>
+        </md-button>
+    </md-toolbar>
+    <md-divider></md-divider>
+    <md-content md-theme="operator" flex layout="column" >
+            <div ng-repeat="indicator in $ctrl.info.indicators">
+                <operator-component indicator="indicator">
+                    <operator-categories>
+                        <div style=" overflow: hidden">
+                            <div layout="column" ng-repeat="metric in indicator.getMetrics()"
+                                    style="min-height: 3vh; height: 3vh;">
+                                <md-divider></md-divider>
+                                <metric-component layout="row" layout-align="start start" metric="metric" ></metric-component>
+                            </div>
+                        </div>
+                    </operator-categories>
+                    <operator-scales ng-if="indicator.getParameters().length > 0">
+                        <div class="md-whiteframe-2dp" style="margin: 2px 0; overflow: hidden">
+                            <div layout="column" ng-repeat="param in indicator.getParameters()">
+                                <md-divider></md-divider>
+                                <scaler-component param="param"></scaler-component>
+                            </div>
+                        </div>
+                    </operator-scales>
+                    <operator-determiners>
+                        <factor-component></factor-component>
+                    </operator-determiners>
+                </operator-component>
+                <md-divider></md-divider>
+            </div>
+    </md-content>
+</div>

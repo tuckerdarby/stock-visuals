@@ -1,0 +1,16 @@
+<div layout-padding layout="row" layout-align="center" style="min-height: 3vh;">
+    <div flex="35" style="font-size:1em; margin-top: 0vh">
+        <span ng-bind="$ctrl.param.val"></span>
+    </div>
+    <div flex="5"></div>
+    <md-slider-container flex="60" style="overflow: hidden; margin-top: 0vh;">
+        <md-slider style="margin: auto auto; max-height:1vh; min-height:1vh; height: 1vh; width: 70%; line-height: 0;"
+                   flex
+                   ng-model="$ctrl.param.val"
+                   min="{{$ctrl.param.minVal}}"
+                   max="{{$ctrl.param.maxVal}}"
+                   ng-change="$ctrl.updateParameter()">
+        </md-slider>
+    </md-slider-container>
+    <div flex="10"></div>
+</div>
