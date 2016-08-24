@@ -1,1 +1,1 @@
-A single page application for stock visualizations using AngularJS, ui-router, angular-material, and the Yahoo YQL API. This is completely client-side and you just need to run index. Set headers to allow access cross origin or within the browser for local use.
+A single page application for stock visualizations using AngularJS, D3, ui-router, angular-material, and the Yahoo YQL API. This is completely client-side and you just need to run index. Set headers to allow access cross origin or within the browser for local use.
